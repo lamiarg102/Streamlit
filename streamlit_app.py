@@ -50,7 +50,7 @@ if select == "Upload a picture":
        img = np.expand_dims(img, axis=0)
        img /= 255.0
        predict(img)
-    if select =="Use your Webcam":
+if select =="Use your Webcam":
         img_file_buffer = st.camera_input("Take a picture")
         if img_file_buffer:
             st.image(img_file_buffer)
