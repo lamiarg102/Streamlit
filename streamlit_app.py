@@ -19,7 +19,7 @@ def predict(img):
     prediction = model.predict(img)
 
 # Afficher les probabilités pour chaque classe
-    st.subheader("Probabilités de chaque problème :")
+    st.subheader("Welcome To Gerajeune App")
     classes = ['blackhead', 'acne', 'ride0']
 
     for i in range(len(classes)):
