@@ -27,7 +27,9 @@ def predict(img):
 
 # Afficher la classe prédite
     print(prediction)
-    predicted_class = classes[np.argmax(prediction)]
+    argmax=  np.argmax(prediction)
+    print(argmax)
+    predicted_class = classes[argmax]
     st.write(f"Classe prédite : {predicted_class}")
 
 # Titre de l'application Streamlit
