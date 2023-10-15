@@ -19,7 +19,7 @@ def predict(img):
     prediction = model.predict(img)
 
 # Afficher les probabilités pour chaque classe
-    st.subheader("Welcome To Gerajeune App")
+    st.subheader("Détection de Problèmes de Peau")
     classes = ['blackhead', 'acne', 'ride0']
 
     for i in range(len(classes)):
@@ -35,7 +35,7 @@ def predict(img):
         st.write("Classe prédite : Classe inconnue")
 
 # Titre de l'application Streamlit
-st.title("Détection de Problèmes de Peau")
+st.title("Welcome To Gerajeune App")
 select = st.selectbox("Choose an option", ["Upload a picture", "Use your Webcam"])
 if select == "Upload a picture":
     uploaded_image = st.file_uploader("Télécharger une image", type=["jpg", "jpeg", "png"])
