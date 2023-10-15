@@ -35,8 +35,7 @@ def predict(img):
     if 0 <= argmax < len(classes):
         predicted_class = classes[argmax]
         st.write(f"Classe prédite : {predicted_class}")
-    else:
-        st.write("Classe prédite : Classe inconnue")
+
         
         
 # Titre de l'application Streamlit
