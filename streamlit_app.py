@@ -1,5 +1,3 @@
-
-
 # Streamlit
 #Streamlit interface to visualize the results of pre-trained models.
 import streamlit as st
@@ -14,25 +12,26 @@ model = load_model('model_facial_skin_MobileNetv2.h5')  # Assurez-vous que 'weig
 
 # Définir les classes de problèmes possibles
 def predict(img):
- 
-# Faire la prédiction
+    # Faire la prédiction
     prediction = model.predict(img)
 
-# Afficher les probabilités pour chaque classe
-    st.subheader("Détection de Problèmes de Peau")
+    # Trouver la classe avec la plus haute probabilité
+    argmax = np.argmax(prediction)
+    
+    # Afficher les probabilités pour chaque classe
+    st.subheader("Probabilités de chaque problème :")
     classes = ['blackhead', 'acne', 'ride0']
 
     for i in range(len(classes)):
         st.write(f"{classes[i]} : {prediction[0][i]}")
 
-# Afficher la classe prédite
-    argmax = np.argmax(prediction)
-    
+    # Afficher la classe prédite
     if 0 <= argmax < len(classes):
         predicted_class = classes[argmax]
         st.write(f"Classe prédite : {predicted_class}")
     else:
         st.write("Classe prédite : Classe inconnue")
+
 
 # Titre de l'application Streamlit
 st.title("Welcome To Gerajeune App")
