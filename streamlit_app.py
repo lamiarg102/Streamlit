@@ -10,10 +10,13 @@ from tensorflow.keras.models import load_model
 # Charger le modèle pré-entraîné
 model = load_model('model_facial_skin_MobileNetv2.h5')  # Assurez-vous que 'weights.h5' pointe vers votre modèle sauvegardé
 
-# Définir les classes de problèmes possibles
+# Inside the predict function
 def predict(img):
     # Faire la prédiction
     prediction = model.predict(img)
+
+    # Print the prediction values for debugging
+    print("Prediction values:", prediction)
 
     # Trouver la classe avec la plus haute probabilité
     argmax = np.argmax(prediction)
@@ -21,9 +24,11 @@ def predict(img):
     # Afficher les probabilités pour chaque classe
     st.subheader("Probabilités de chaque problème :")
     classes = ['blackhead', 'acne', 'ride0']
-
     for i in range(len(classes)):
         st.write(f"{classes[i]} : {prediction[0][i]}")
+
+    # Print the argmax value for debugging
+    print("Argmax value:", argmax)
 
     # Afficher la classe prédite
     if 0 <= argmax < len(classes):
@@ -31,8 +36,7 @@ def predict(img):
         st.write(f"Classe prédite : {predicted_class}")
     else:
         st.write("Classe prédite : Classe inconnue")
-
-
+        
 # Titre de l'application Streamlit
 st.title("Welcome To Gerajeune App")
 select = st.selectbox("Choose an option", ["Upload a picture", "Use your Webcam"])
