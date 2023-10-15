@@ -13,7 +13,6 @@ from tensorflow.keras.models import load_model
 model = load_model('model_facial_skin_MobileNetv2.h5')  # Assurez-vous que 'weights.h5' pointe vers votre modèle sauvegardé
 
 # Définir les classes de problèmes possibles
-classes = ['blackhead', 'acne', 'ride0']
 def predict(img):
  
 # Faire la prédiction
@@ -21,10 +20,13 @@ def predict(img):
 
 # Afficher les probabilités pour chaque classe
     st.subheader("Probabilités de chaque problème :")
+    classes = ['blackhead', 'acne', 'ride0']
+
     for i in range(len(classes)):
         st.write(f"{classes[i]} : {prediction[0][i]}")
 
 # Afficher la classe prédite
+    print(prediction)
     predicted_class = classes[np.argmax(prediction)]
     st.write(f"Classe prédite : {predicted_class}")
 
