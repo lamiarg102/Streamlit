@@ -25,10 +25,14 @@ def predict(img):
     for i in range(len(classes)):
         st.write(f"{classes[i]} : {prediction[0][i]}")
 
-    # Afficher la classe prédite
+# Afficher la classe prédite
     argmax = np.argmax(prediction)
-    predicted_class = classes[argmax]
-    st.write(f"Classe prédite : {predicted_class}")
+    
+    if 0 <= argmax < len(classes):
+        predicted_class = classes[argmax]
+        st.write(f"Classe prédite : {predicted_class}")
+    else:
+        st.write("Classe prédite : Classe inconnue")
 
 # Titre de l'application Streamlit
 st.title("Détection de Problèmes de Peau")
