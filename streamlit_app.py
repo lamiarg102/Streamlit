@@ -30,7 +30,7 @@ def predict(img):
     print("\n")
     argmax=  np.argmax(prediction)
     print(argmax)
-    print("\n argmax" +argmax)
+    print("\n argmax")
     predicted_class = classes[argmax]
     st.write(f"Classe prédite : {predicted_class}")
 
