@@ -24,7 +24,7 @@ if uploaded_image is not None:
     st.image(uploaded_image, caption="Image téléchargée", use_column_width=True)
 
  # Prétraiter l'image pour la prédiction
-    img = image.load_img(uploaded_image, target_size=(299, 299))
+    img = image.load_img(uploaded_image, target_size=(224, 224))
     img = image.img_to_array(img)
     img = np.expand_dims(img, axis=0)
     img /= 255.0
