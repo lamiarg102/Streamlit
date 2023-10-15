@@ -26,9 +26,9 @@ def predict(img):
         st.write(f"{classes[i]} : {prediction[0][i]}")
 
 # Afficher la classe prédite
-    print(prediction)
+    print("\n" + prediction)
     argmax=  np.argmax(prediction)
-    print(argmax)
+    print("\n argmax" +argmax)
     predicted_class = classes[argmax]
     st.write(f"Classe prédite : {predicted_class}")
 
