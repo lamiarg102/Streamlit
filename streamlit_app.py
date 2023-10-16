@@ -28,16 +28,15 @@ def predict(img):
     for i in range(len(classes)):
         st.write(f"{classes[i]} : {prediction[0][i]}")
 
-    # Print the argmax value for debugging
-    print("Argmax value:", argmax)
+    # Find the class index with the highest probability
+    predicted_class_index = np.argmax(prediction)
 
-    # Afficher la classe prédite
-    if 0 <= argmax < len(classes):
-        predicted_class = classes[argmax]
-        st.write(f"Classe prédite : {predicted_class}")
-    else:
-        st.write("Classe prédite : Classe inconnue")
-        
+    # Map the class index to a human-readable class label
+    class_labels = ["Class1", "Class2", "Class3"]
+    predicted_class_label = class_labels[predicted_class_index]
+
+    print("Predicted class:", predicted_class_label)
+            
         
 # Titre de l'application Streamlit
 st.title("Welcome To Gerajeune App")
