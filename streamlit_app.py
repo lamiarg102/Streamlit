@@ -15,8 +15,6 @@ def predict(img):
     # Make the prediction
     prediction = model.predict(img)
 
-    # Print the prediction values for debugging
-    print("Prediction values:", prediction)
 
     # Find the class index with the highest probability
     predicted_class_index = np.argmax(prediction)
