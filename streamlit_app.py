@@ -20,6 +20,8 @@ def predict(img):
     predicted_class_index = np.argmax(prediction)
     print("predicted class index is")
     print(predicted_class_index)
+       for i in range(len(classes)):
+        st.write(f"{classes[i]} : {prediction[0][i]}")
     # Map the class index to the human-readable class label
     predicted_class_label = class_labels[predicted_class_index]
 
