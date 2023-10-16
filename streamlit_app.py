@@ -20,7 +20,7 @@ def predict(img):
 
     # Find the class index with the highest probability
     predicted_class_index = np.argmax(prediction)
-
+    print(predicted_class_index)
     # Map the class index to the human-readable class label
     predicted_class_label = class_labels[predicted_class_index]
 
