@@ -5,7 +5,7 @@ from tensorflow.keras.models import load_model
 from PIL import Image  # Import the PIL library
 
 # Load the pre-trained model
-model = load_model('mon_modele.h5')
+model = load_model('model_facial_skin_mobilenetv2.ipynb')
 
 # Define the class labels
 class_labels = ['blackhead', 'acne', 'ride0']
